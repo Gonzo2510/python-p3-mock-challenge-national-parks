@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-import ipdb
+# import ipdb
 
 from classes.many_to_many import NationalPark
 from classes.many_to_many import Visitor
 from classes.many_to_many import Trip
 
-if __name__ == '__main__':
-    print("HELLO! :) let's debug :vibing_potato:")
+# if __name__ == '__main__':
+#     print("HELLO! :) let's debug :vibing_potato:")
 
-    ipdb.set_trace()
+#     ipdb.set_trace()
+
+
+v1 = Visitor('Jacob')
