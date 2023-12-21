@@ -33,9 +33,15 @@ class NationalPark:
     
     def best_visitor(self):
         visitors = {}
-
-    
-        pass
+        for trip in Trip.all:
+            if trip.national_park == self:
+                if trip.visitor not in visitors:
+                    visitors.update({trip.visitor : 1})
+                else:
+                    visitors[trip.visitor] += 1
+        print(visitors)
+        max_key = max(visitors, key=lambda k: visitors[k])
+        return max_key
 
 
 class Trip:
@@ -112,7 +118,14 @@ class Visitor:
         return trips
     
     def national_parks(self):
-        pass
+        parks = []
+        for trip in Trip.all:
+            if trip.visitor == self:
+                if trip.national_park not in parks:
+                    parks.append(trip.national_park)
+        print(parks)
+        return parks
+        
     
     def total_visits_at_park(self, park):
         pass
